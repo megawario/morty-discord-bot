@@ -1,0 +1,27 @@
+{
+  "name": "morty-discord-bot",
+  "version": "1.0.0",
+  "description": "the morty discord bot",
+  "main": "bot.js",
+  "dependencies": {
+    "discord.js": "^11.2.1",
+    "forever": "^0.15.3",
+    "node-rest-client": "^3.1.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "forever start bot.js",
+    "stop": "forever stopall"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/megawario/morty-discord-bot.git"
+  },
+  "author": "wario",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/megawario/morty-discord-bot/issues"
+  },
+  "homepage": "https://github.com/megawario/morty-discord-bot#readme"
+}
