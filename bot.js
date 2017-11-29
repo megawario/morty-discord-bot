@@ -3,6 +3,7 @@ const config = require('./config.js');
 const catFacts = require('./ops/catFact.js');
 const banner = require('./ops/banned.js');
 const client = new Discord.Client();
+const token = process.env.token;
 
 
 client.on('ready', () => {
@@ -14,18 +15,18 @@ client.on('message', message => {
 
     //mentioned messages for morty
     if(message.isMemberMentioned(client.user) && !banner.isBanned(message.author)){
+
         //non auth commands
         if(message.content.includes("facts")){
-            catFacts().then((fact)=>{
-                reply(message,"\n "+fact + "\n :cat:");
-            });
+            catFacts().then(
+                (fact)=>{reply(message,"\n "+fact + "\n :cat:");});
         }
         //admin only commands
 
     }
 });
 
-client.login(config.bot.token);
+client.login(token);
 
 var reply = function (message,reply){
     message.reply(reply)
