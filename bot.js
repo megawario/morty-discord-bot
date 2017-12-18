@@ -1,35 +1,23 @@
-const Discord = require('discord.js');
+const utils = require('./utils.js');
 const config = require('./config.js');
-const catFacts = require('./ops/catFact.js');
-const banner = require('./ops/banned.js');
+const Discord = require('discord.js');
 const client = new Discord.Client();
-const token = process.env.token;
-
+const operations = require('./morty_modules/operations.js');
 
 client.on('ready', () => {
     console.log('I am ready!');
 });
 
 client.on('message', message => {
-    console.log("Received: "+message.content)
+    console.log("Received: "+message.content);
 
-    //mentioned messages for morty
-    if(message.isMemberMentioned(client.user) && !banner.isBanned(message.author)){
-
-        //non auth commands
-        if(message.content.includes("facts")){
-            catFacts().then(
-                (fact)=>{reply(message,"\n "+fact + "\n :cat:");});
-        }
-        //admin only commands
-
+    //filter by mention and remove mention from message
+    if(message.isMemberMentioned(client.user)) {
+        message.content=message.content.replace(client.user,"").trim();
+        operations.execute(message);
     }
+
 });
 
-client.login(token);
-
-var reply = function (message,reply){
-    message.reply(reply)
-        .then(msg => console.log(`Sent a reply to ${msg.author}`))
-        .catch(console.error);
-};
+console.log(config);
+client.login(config.discord.token);
