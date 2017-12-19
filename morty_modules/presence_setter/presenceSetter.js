@@ -1,5 +1,5 @@
-var OperationBaseClass = require("../OperationBaseClass.js");
-var client = require("../../discordSingleton").instance.discord;
+var OperationBaseClass = require("../../core/OperationBaseClass.js");
+var client = require("../../core/discordSingleton").instance.discord;
 
 /**
  * sets the presence for the bot

@@ -1,5 +1,5 @@
 var Client = require('node-rest-client').Client;
-var OperationBaseClass = require("../OperationBaseClass.js");
+var OperationBaseClass = require("../../core/OperationBaseClass.js");
 
 var options = {
     host: 'http://catfact.ninja/fact',

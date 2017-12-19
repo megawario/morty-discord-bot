@@ -19,10 +19,10 @@ class OperationsClass {
 var Operations = new OperationsClass();
 
 //register operations
-var catfacts = require("./cat_facts/catFact.js");
+var catfacts = require("../morty_modules/cat_facts/catFact.js");
 Operations.register(catfacts);
 
-var presenceSetter = require("./presence_setter/presenceSetter.js");
+var presenceSetter = require("../morty_modules/presence_setter/presenceSetter.js");
 Operations.register(presenceSetter);
 
 module.exports = Operations;
