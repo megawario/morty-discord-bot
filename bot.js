@@ -1,9 +1,7 @@
 const utils = require('./utils.js');
+const client = require('./discordSingleton.js').instance.discord;
 const config = require('./config.js');
-const Discord = require('discord.js');
-const client = new Discord.Client();
 const operations = require('./morty_modules/operations.js');
-
 client.on('ready', () => {
     console.log('I am ready!');
 });

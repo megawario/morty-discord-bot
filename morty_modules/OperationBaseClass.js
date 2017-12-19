@@ -28,11 +28,6 @@ class OperationBaseClass {
             .then(msg => console.log(`Sent a reply to ${msg.author}`))
             .catch(console.error);
     };
-
-    debug(message){
-        console.log(this.name+": "+message);
-    }
-
 }
 
 module.exports=OperationBaseClass;

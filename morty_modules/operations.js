@@ -22,5 +22,7 @@ var Operations = new OperationsClass();
 var catfacts = require("./cat_facts/catFact.js");
 Operations.register(catfacts);
 
+var presenceSetter = require("./presence_setter/presenceSetter.js");
+Operations.register(presenceSetter);
 
 module.exports = Operations;

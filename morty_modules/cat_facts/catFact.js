@@ -21,12 +21,10 @@ class CatFacts extends OperationBaseClass {
 
     //overrides:
     isOperation(message) {
-        this.debug("Checkningadf "+message.content+ " result is: "+message.content.match(/^catfacts/));
         return message.content.match(/^catfacts/);
     }
 
     execute(message) {
-        this.debug("Executing catfacts");
         this.catFact()
             .then((fact)=>{this.reply(message,options.reply_success.format(fact));})
             .catch((err)=>this.reply(message,options.reply_fail));
