@@ -5,14 +5,12 @@
   "main": "bot.js",
   "dependencies": {
     "discord.js": "^11.2.1",
-    "forever": "^0.15.3",
     "node-rest-client": "^3.1.0"
   },
   "devDependencies": {},
   "scripts": {
     "test": "source scripts/initProperties.sh && node bot.js",
-    "start": "forever start bot.js",
-    "stop": "forever stopall"
+    "start": "node bot.js"
   },
   "repository": {
     "type": "git",

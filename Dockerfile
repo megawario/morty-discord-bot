@@ -1,12 +1,12 @@
 FROM node:carbon
 
-WORKDIR /usr/src/app
+WORKDIR /app
 
-COPY package*.json ./
+COPY package*.json /app/
 
 RUN npm install
 
-COPY . .
+COPY . /app
 
+CMD npm start
 EXPOSE 8080
-CMD ["npm", "start"]
